@@ -1,4 +1,6 @@
 import subprocess, requests, simplejson
+from utils import get_stream_info
+from constants import API_ROOT, API_ACCESS_PUBLIC
 
 class PeriscopeUser(object):
     def __init__(self, data):

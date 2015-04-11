@@ -1,10 +1,10 @@
 # The Periscope Firehose!
 
-This library provides an easy way to listen for new Periscope streams published on Twitter.
+Provides a class, `PeriscopeFirehose`, that allows you to listen for new Periscope broadcasts published on Twitter simply by overriding the method `on_broadcast`.
 
 ### Installation
 
-`pip install periscope-firehose`
+`$ pip install periscope-firehose`
 
 ### Usage
 

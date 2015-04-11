@@ -1,6 +1,5 @@
 import requests, simplejson, urlparse
 from BeautifulSoup import BeautifulSoup
-from broadcast import PeriscopeBroadcast
 
 def get_stream_info(url):
     resp = requests.get(url)
@@ -26,13 +25,3 @@ def get_periscope_url_from_tweet(status):
         if parsed.netloc == 'www.periscope.tv':
             return expanded_url
 
-def tweet_to_broadcast(status):
-    try:
-        web_url = get_periscope_url_from_tweet(status)
-        info = get_stream_info(web_url)
-        broadcast = PeriscopeBroadcast(info['data'],
-                                       web_url = web_url,
-                                       token_id = info["token_id"])
-        return broadcast
-    except:
-        pass

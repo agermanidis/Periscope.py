@@ -1,5 +1,17 @@
-from utils import tweet_to_broadcast
 import tweepy
+from utils import get_periscope_url_from_tweet, get_stream_info
+from broadcast import PeriscopeBroadcast
+
+def tweet_to_broadcast(status):
+    try:
+        web_url = get_periscope_url_from_tweet(status)
+        info = get_stream_info(web_url)
+        broadcast = PeriscopeBroadcast(info['data'],
+                                       web_url = web_url,
+                                       token_id = info["token_id"])
+        return broadcast
+    except:
+        pass
 
 class PeriscopeFirehose(object):
     class PeriscopeTweetListener(tweepy.StreamListener):
@@ -30,3 +42,4 @@ class PeriscopeFirehose(object):
     def on_broadcast(self, broadcast):
         # override this
         pass
+    
