@@ -2,6 +2,10 @@
 
 This library provides an easy way to listen for new Periscope streams published on Twitter.
 
+### Installation
+
+`pip install periscope-firehose`
+
 ### Usage
 
 ```python
