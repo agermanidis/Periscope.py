@@ -1,0 +1,2 @@
+class PeriscopeBroadcastEndedError(Exception):
+    pass

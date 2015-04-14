@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='periscope-firehose',
-    version='0.0.6',
+    version='0.0.7',
     description='Listener for new public Periscope streams',
     long_description=open('README.md').read(),
     author='Anastasis Germanidis',
